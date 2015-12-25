@@ -39,7 +39,7 @@ class SamuLife : public QMainWindow
 {
     Q_OBJECT
 
-    int m_cw {12}, m_ch {10};
+    int m_cw {13*2}, m_ch {12*2};
     GameOfLife *gameOfLife;
     bool **lattice {nullptr};
     bool **prediction {nullptr};

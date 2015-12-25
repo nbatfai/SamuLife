@@ -242,7 +242,7 @@ void GameOfLife::learning()
 
                 ss << lattice[s][o];
 
-                img_input[ii++] = lattice[s][o]?0.5:-0.5;
+                img_input[ii++] = lattice[s][o]?0.75:-0.75;
 
               } // if
 
