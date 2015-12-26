@@ -5,8 +5,8 @@ an example of the paper entitled "Samu in his prenatal development".
 This project uses the same COP-based Q-learning engine as [Samu(Nahshon)](https://github.com/nbatfai/nahshon) to predict the next sentences of a conversation. 
 
 ## Demo
-[https://youtu.be/p936TRxfC2I](https://youtu.be/p936TRxfC2I)
-
+1. #1: [https://youtu.be/p936TRxfC2I](https://youtu.be/p936TRxfC2I)
+2. #2, v0.0.1-buggaQL: [https://youtu.be/WNrf9OhSbPQ](https://youtu.be/WNrf9OhSbPQ)
 
 ## Usage
 ```
