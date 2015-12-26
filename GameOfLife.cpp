@@ -32,9 +32,6 @@
 
 GameOfLife::GameOfLife ( int w, int h ) : m_w ( w ), m_h ( h )
 {
-  m_w = 30;
-  m_h = 20;
-
   lattices = new bool**[2];
   lattices[0] = new bool*[m_h];
   for ( int i {0}; i<m_h; ++i )

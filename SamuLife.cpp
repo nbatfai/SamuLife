@@ -35,7 +35,7 @@ SamuLife::SamuLife ( int w, int h, QWidget *parent ) : QMainWindow ( parent )
   setWindowTitle ( "SamuLife" );
   setFixedSize ( QSize ( 2*w*m_cw, h*m_ch ) );
 
-  gameOfLife = new GameOfLife();
+  gameOfLife = new GameOfLife(w, h);
   gameOfLife->start();
 
   connect ( gameOfLife, SIGNAL ( cellsChanged ( bool **, bool ** ) ),
