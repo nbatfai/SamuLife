@@ -24,7 +24,7 @@
  *
  * @section DESCRIPTION
  *
- * Samu (Nahshon) has learnt the rules of Conway's Game of Life. This is 
+ * Samu (Nahshon) has learnt the rules of Conway's Game of Life. This is
  * an example of the paper entitled "Samu in his prenatal development".
  */
 
@@ -35,7 +35,7 @@ SamuLife::SamuLife ( int w, int h, QWidget *parent ) : QMainWindow ( parent )
   setWindowTitle ( "SamuLife" );
   setFixedSize ( QSize ( 2*w*m_cw, h*m_ch ) );
 
-  gameOfLife = new GameOfLife(w, h);
+  gameOfLife = new GameOfLife ( w, h );
   gameOfLife->start();
 
   connect ( gameOfLife, SIGNAL ( cellsChanged ( bool **, bool ** ) ),
@@ -54,6 +54,8 @@ void SamuLife::paintEvent ( QPaintEvent* )
 {
   QPainter qpainter ( this );
 
+
+
   for ( int i {0}; i<gameOfLife->getH(); ++i )
     {
       for ( int j {0}; j<gameOfLife->getW(); ++j )
@@ -71,10 +73,10 @@ void SamuLife::paintEvent ( QPaintEvent* )
           if ( prediction )
             {
               if ( prediction[i][j] )
-                qpainter.fillRect ( gameOfLife->getW()*m_cw+j*m_cw, i*m_ch,
+                qpainter.fillRect ( gameOfLife->getW() *m_cw + j*m_cw, i*m_ch,
                                     m_cw, m_ch, Qt::black );
               else
-                qpainter.fillRect ( gameOfLife->getW()*m_cw+j*m_cw, i*m_ch,
+                qpainter.fillRect ( gameOfLife->getW() *m_cw + j*m_cw, i*m_ch,
                                     m_cw, m_ch, Qt::white );
             }
           qpainter.setPen ( QPen ( Qt::red, 1 ) );
@@ -83,13 +85,29 @@ void SamuLife::paintEvent ( QPaintEvent* )
                               m_cw, m_ch );
 
           qpainter.setPen ( QPen ( Qt::blue, 1 ) );
-	  
-          qpainter.drawRect ( gameOfLife->getW()*m_cw+j*m_cw, i*m_ch,
+
+          qpainter.drawRect ( gameOfLife->getW() *m_cw + j*m_cw, i*m_ch,
                               m_cw, m_ch );
         }
     }
 
+  QFont font = qpainter.font() ;
+  font.setPointSize ( 28 );
+  qpainter.setFont ( font );
+  qpainter.setPen ( QPen ( Qt::red, 1 ) );
+  qpainter.drawText ( 40, 60, "Reality" );
+  qpainter.setPen ( QPen ( Qt::blue, 1 ) );
+  qpainter.drawText ( gameOfLife->getW() *m_cw +40, 60, "Samu's prediction" );
+
   qpainter.end();
+}
+
+void SamuLife::keyPressEvent ( QKeyEvent * event )
+{
+  if ( event->key() == Qt::Key_Space )
+    {
+      gameOfLife->pause();
+    }
 }
 
 SamuLife::~SamuLife()

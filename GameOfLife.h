@@ -52,6 +52,8 @@ class GameOfLife : public QThread
     bool **predictions;
     void learning();
     
+    bool paused {false};
+    
     QL samuQl;
 
 public:
@@ -62,6 +64,7 @@ public:
     bool **lattice();
     int getW() const;
     int getH() const;
+    void pause();
 
 signals:
     void cellsChanged ( bool **, bool ** );

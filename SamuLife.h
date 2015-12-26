@@ -31,15 +31,17 @@
  * an example of the paper entitled "Samu in his prenatal development".
  */
 
+#include <QKeyEvent>
 #include <QMainWindow>
 #include <QPainter>
+#include <QFont>
 #include "GameOfLife.h"
 
 class SamuLife : public QMainWindow
 {
     Q_OBJECT
 
-    int m_cw {13*2}, m_ch {12*2};
+    int m_cw {14*2}, m_ch {12*2};
     GameOfLife *gameOfLife;
     bool **lattice {nullptr};
     bool **prediction {nullptr};
@@ -51,6 +53,7 @@ public:
     SamuLife ( int w = 30, int h = 20, QWidget *parent = 0 );
     virtual ~SamuLife();
     void paintEvent ( QPaintEvent* );
+    void keyPressEvent( QKeyEvent * event );
 
 };
 

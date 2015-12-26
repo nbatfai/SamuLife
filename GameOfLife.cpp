@@ -24,7 +24,7 @@
  *
  * @section DESCRIPTION
  *
- * Samu (Nahshon) has learnt the rules of Conway's Game of Life. This is 
+ * Samu (Nahshon) has learnt the rules of Conway's Game of Life. This is
  * an example of the paper entitled "Samu in his prenatal development".
  */
 
@@ -74,18 +74,22 @@ void GameOfLife::run()
     {
       QThread::msleep ( 150 );
 
-      development();
-
-      learning();
-
-      emit cellsChanged ( lattices[latticeIndex], predictions );
-
+      if ( !paused )
+        {
+          development();
+          learning();
+          emit cellsChanged ( lattices[latticeIndex], predictions );
+        }
     }
 
 }
 
-int GameOfLife::numberOfNeighbors ( bool **lattice,
-                                    int r, int c, bool state )
+void GameOfLife::pause()
+{
+  paused = !paused;
+}
+
+int GameOfLife::numberOfNeighbors ( bool **lattice, int r, int c, bool state )
 {
   int number {0};
   for ( int i {-1}; i<2; ++i )
@@ -210,7 +214,6 @@ void GameOfLife::learning()
       for ( int c {0}; c<m_w; ++c )
         {
 
-          std::string prg;
           std::stringstream ss;
           int ii {0};
 
@@ -243,7 +246,7 @@ void GameOfLife::learning()
 
               } // if
 
-          prg = ss.str();
+          std::string prg = ss.str();
           SPOTriplet response = samuQl ( lattice[r][c], prg, img_input );
           predictions[r][c] = response;
 

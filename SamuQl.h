@@ -633,7 +633,7 @@ public:
             //prcps[triplet] = new Perceptron ( 5, 10*80, 400, 400,  32, 1 ); // 302
 #elif LIFEOFGAME
             prcps[triplet] = new Perceptron ( 3, 9, 6,  1 );
-
+	    	   
 #else
             prcps[triplet] = new Perceptron ( 3, 256*256, 80, 1 );
             //prcps[triplet] = new Perceptron ( 3, 256*256, 400, 1 );
@@ -735,6 +735,9 @@ public:
         std::memcpy ( prev_image, image, 10*80*sizeof ( double ) );
 #elif LIFEOFGAME
         std::memcpy ( prev_image, image, 9*sizeof ( double ) );
+	
+	
+	
 #else
         std::memcpy ( prev_image, image, 256*256*sizeof ( double ) );
 #endif
