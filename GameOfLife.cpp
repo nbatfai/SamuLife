@@ -50,6 +50,12 @@ GameOfLife::GameOfLife ( int w, int h ) : m_w ( w ), m_h ( h )
       predictions[i] = new bool [m_w];
     }
 
+  samuQl = new QL*[m_h];
+  for ( int i {0}; i<m_h; ++i )
+    {
+      samuQl[i] = new QL [m_w];
+    }
+
   latticeIndex = 0;
   bool ** lattice = lattices[latticeIndex];
   for ( int i {0}; i<m_h; ++i )
@@ -58,10 +64,11 @@ GameOfLife::GameOfLife ( int w, int h ) : m_w ( w ), m_h ( h )
         lattice[i][j] = false;
       }
 
-  glider ( lattice, m_w/2, m_h/2 );
+  glider ( lattice, 2*m_w/5, 2*m_h/5 );
+  glider ( lattice, 3*m_w/5, 3*m_h/5 );
+  glider ( lattice, 4*m_w/5, 4*m_h/5 );
 
 }
-
 
 bool ** GameOfLife::lattice()
 {
@@ -72,12 +79,14 @@ void GameOfLife::run()
 {
   while ( true )
     {
-      QThread::msleep ( 150 );
+      QThread::msleep ( 15 );
 
       if ( !paused )
         {
+	  ++m_time;
           development();
           learning();
+	  latticeIndex = ( latticeIndex+1 ) %2;
           emit cellsChanged ( lattices[latticeIndex], predictions );
         }
     }
@@ -163,7 +172,7 @@ void GameOfLife::development()
             }
         }
     }
-  latticeIndex = ( latticeIndex+1 ) %2;
+  //latticeIndex = ( latticeIndex+1 ) %2;
 }
 
 
@@ -174,8 +183,10 @@ GameOfLife::~GameOfLife()
       delete[] lattices[0][i];
       delete[] lattices[1][i];
       delete[] predictions[i];
+      delete[] samuQl[i];
     }
 
+  delete[] samuQl;
   delete[] predictions;
   delete[] lattices[0];
   delete[] lattices[1];
@@ -202,11 +213,16 @@ int GameOfLife::getH() const
 {
   return m_h;
 }
+long GameOfLife::getT() const
+{
+  return m_time;
+}
 
 void GameOfLife::learning()
 {
   bool **lattice = lattices[latticeIndex];
-
+//bool **lattice = lattices[( latticeIndex+1 ) %2];
+  
   double img_input[9];
 
   for ( int r {0}; r<m_h; ++r )
@@ -242,12 +258,12 @@ void GameOfLife::learning()
 
                 ss << lattice[s][o];
 
-                img_input[ii++] = lattice[s][o]?0.75:-0.75;
+                img_input[ii++] = lattice[s][o]?.99:-.99;
 
               } // if
 
           std::string prg = ss.str();
-          SPOTriplet response = samuQl ( lattice[r][c], prg, img_input );
+          SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg, img_input );
           predictions[r][c] = response;
 
         }

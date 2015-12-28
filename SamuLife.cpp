@@ -98,6 +98,8 @@ void SamuLife::paintEvent ( QPaintEvent* )
   qpainter.drawText ( 40, 60, "Reality" );
   qpainter.setPen ( QPen ( Qt::blue, 1 ) );
   qpainter.drawText ( gameOfLife->getW() *m_cw +40, 60, "Samu's prediction" );
+  qpainter.setPen ( QPen ( Qt::gray, 1 ) );
+  qpainter.drawText ( 40, gameOfLife->getH() *m_ch - 30 , QString::number(gameOfLife->getT()) );
 
   qpainter.end();
 }

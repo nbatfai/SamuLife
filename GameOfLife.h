@@ -54,8 +54,10 @@ class GameOfLife : public QThread
     
     bool paused {false};
     
-    QL samuQl;
-
+    QL** samuQl;
+    
+    long m_time{0};
+    
 public:
     GameOfLife ( int w = 30, int h = 20 );
     ~GameOfLife();
@@ -64,6 +66,7 @@ public:
     bool **lattice();
     int getW() const;
     int getH() const;
+    long getT() const;
     void pause();
 
 signals:

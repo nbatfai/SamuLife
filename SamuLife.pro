@@ -3,6 +3,7 @@
 ######################################################################
 
 DEFINES += LIFEOFGAME
+DEFINES += SARSA
 
 QT += widgets core
 CONFIG += c++11
