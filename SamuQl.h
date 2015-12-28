@@ -786,7 +786,8 @@ public:
         // r' = reward
 
         double reward =
-            3.0*triplet.cmp ( prev_action ) - 1.5;
+            //3.0*triplet.cmp ( prev_action ) - 1.5;
+            ( triplet == prev_action ) ?max_reward:min_reward;
 
         SPOTriplet action = triplet;
 
@@ -866,7 +867,7 @@ public:
         }
 
     }
-
+/*
     void save_prcps ( std::fstream & samuFile ) {
         samuFile << prcps.size();
 
@@ -985,7 +986,7 @@ public:
         load_prcps ( file );
         load_frqs ( file );
     }
-
+*/
     int get_N_e ( void ) const {
         return N_e;
     }
@@ -1125,8 +1126,8 @@ private:
     std::string prev_state;
 
     double prev_reward { -std::numeric_limits<double>::max() };
-    double max_reward { 10.4 };
-    double min_reward {-.8*max_reward};
+    double max_reward {400.1};
+    double min_reward {-600.1};
 
 #ifdef PLACE_VALUE
     double prev_image [10*3];

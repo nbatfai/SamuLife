@@ -83,10 +83,10 @@ void GameOfLife::run()
 
       if ( !paused )
         {
-	  ++m_time;
+          ++m_time;
           development();
           learning();
-	  latticeIndex = ( latticeIndex+1 ) %2;
+          latticeIndex = ( latticeIndex+1 ) %2;
           emit cellsChanged ( lattices[latticeIndex], predictions );
         }
     }
@@ -222,7 +222,7 @@ void GameOfLife::learning()
 {
   bool **lattice = lattices[latticeIndex];
 //bool **lattice = lattices[( latticeIndex+1 ) %2];
-  
+
   double img_input[9];
 
   for ( int r {0}; r<m_h; ++r )
@@ -258,12 +258,13 @@ void GameOfLife::learning()
 
                 ss << lattice[s][o];
 
-                img_input[ii++] = lattice[s][o]?.99:-.99;
+                img_input[ii++] = lattice[s][o]?.5:-.5;
 
               } // if
 
           std::string prg = ss.str();
-          SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg, img_input );
+          //SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg, img_input );
+          SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg );
           predictions[r][c] = response;
 
         }
