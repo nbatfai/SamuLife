@@ -12,6 +12,8 @@ This project uses the same COP-based Q-learning engine as [Samu(Nahshon)](https:
 * #4, v0.0.4-buggy+table:
 
 ## Usage
+
+### v0.0.1-buggyQL
 ```
 git clone https://github.com/nbatfai/SamuLife.git
 cd SamuLife/
@@ -21,3 +23,14 @@ make
 ./SamuLife
 ```
 ![samulife](https://cloud.githubusercontent.com/assets/3148120/12007817/7252e9c0-ac16-11e5-9b7a-faa747d93929.png)
+
+### v0.0.2-manySamus-withoutNN
+
+```
+git clone https://github.com/nbatfai/SamuLife.git
+cd SamuLife/
+git checkout v0.0.2-manySamus-withoutNN
+~/Qt/5.5/gcc_64/bin/qmake SamuLife.pro
+make
+./SamuLife
+```
