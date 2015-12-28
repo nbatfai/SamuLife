@@ -8,7 +8,7 @@ This project uses the same COP-based Q-learning engine as [Samu(Nahshon)](https:
 * #1: [https://youtu.be/p936TRxfC2I](https://youtu.be/p936TRxfC2I) It works very well, but its algorithm is unreasonable. 
 * #2, v0.0.1-buggyQL: [https://youtu.be/WNrf9OhSbPQ](https://youtu.be/WNrf9OhSbPQ) 
 The behaviour and the algorithm of this is the same as the previous one.
-* #3, v0.0.2-manySamus-withoutNN: (so many little Samus, without neural network architecture) [http](http) 
+* #3, v0.0.2-manySamus-withoutNN-toYouTube: (so many little Samus, without neural network architecture) [http](http) 
 This algorithm has already been reasonable and it has worked very well.
 * #3, v0.0.3-manySamus-withNN: [http](http) 
 This algorithm is the same as the previous (reasonable) one but it uses neural networks to approximate the Q values 
