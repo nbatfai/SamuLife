@@ -1090,7 +1090,7 @@ private:
         }
     }
 
-    int N_e = 1;
+    int N_e = 2;
 
     QL ( const QL & );
     QL & operator= ( const QL & );
@@ -1127,8 +1127,8 @@ private:
     std::string prev_state;
 
     double prev_reward { -std::numeric_limits<double>::max() };
-    double max_reward {15.1};
-    double min_reward {-4.1};
+    double max_reward {13.1};
+    double min_reward {-3.1};
 
 #ifdef PLACE_VALUE
     double prev_image [10*3];
