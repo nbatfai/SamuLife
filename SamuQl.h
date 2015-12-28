@@ -632,7 +632,8 @@ public:
             //prcps[triplet] = new Perceptron ( 5, 10*80, 196, 32,  32, 1 ); // 302
             //prcps[triplet] = new Perceptron ( 5, 10*80, 400, 400,  32, 1 ); // 302
 #elif LIFEOFGAME
-            prcps[triplet] = new Perceptron ( 3, 9, 32, 1 );
+            //prcps[triplet] = new Perceptron ( 3, 9, 32, 1 );
+	    prcps[triplet] = new Perceptron ( 3, 9, 5, 1 );
 	    	   
 #else
             prcps[triplet] = new Perceptron ( 3, 256*256, 80, 1 );
@@ -1089,7 +1090,7 @@ private:
         }
     }
 
-    int N_e = 2;
+    int N_e = 1;
 
     QL ( const QL & );
     QL & operator= ( const QL & );
@@ -1126,8 +1127,8 @@ private:
     std::string prev_state;
 
     double prev_reward { -std::numeric_limits<double>::max() };
-    double max_reward {400.1};
-    double min_reward {-600.1};
+    double max_reward {15.1};
+    double min_reward {-4.1};
 
 #ifdef PLACE_VALUE
     double prev_image [10*3];

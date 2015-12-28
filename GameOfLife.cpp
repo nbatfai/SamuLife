@@ -258,13 +258,13 @@ void GameOfLife::learning()
 
                 ss << lattice[s][o];
 
-                img_input[ii++] = lattice[s][o]?.5:-.5;
+                img_input[ii++] = lattice[s][o]?1.1:-1.1;
 
               } // if
 
           std::string prg = ss.str();
-          //SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg, img_input );
-          SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg );
+          SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg, img_input );
+          //SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg );
           predictions[r][c] = response;
 
         }
