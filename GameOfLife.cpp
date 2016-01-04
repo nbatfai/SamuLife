@@ -67,6 +67,8 @@ GameOfLife::GameOfLife ( int w, int h ) : m_w ( w ), m_h ( h )
   glider ( lattice, 2*m_w/5, 2*m_h/5 );
   glider ( lattice, 3*m_w/5, 3*m_h/5 );
   glider ( lattice, 4*m_w/5, 4*m_h/5 );
+  glider ( lattice, 4*m_w/5, 2*m_h/5 );
+  glider ( lattice, 2*m_w/5, 4*m_h/5 );
 
 }
 
@@ -223,7 +225,7 @@ void GameOfLife::learning()
   bool **lattice = lattices[latticeIndex];
 //bool **lattice = lattices[( latticeIndex+1 ) %2];
 
-  double img_input[9];
+  double img_input[40];
 
   for ( int r {0}; r<m_h; ++r )
     {
@@ -235,7 +237,10 @@ void GameOfLife::learning()
 
           for ( int i {-1}; i<2; ++i )
             for ( int j {-1}; j<2; ++j )
-              {
+
+      if ( ! ( ( i==0 ) && ( j==0 ) ) )
+	    
+	    {
                 int o = c + j;
                 if ( o < 0 )
                   {
@@ -256,12 +261,45 @@ void GameOfLife::learning()
                     s = 0;
                   }
 
-                ss << lattice[s][o];
+                //ss << lattice[s][o];
 
-                img_input[ii++] = lattice[s][o]?1.2:-1.2;
+		if(lattice[s][o]) ++ii;
+		
+                //img_input[ii++] = lattice[s][o]?1.2:-1.2;
 
               } // if
 
+              //std::string iis[] = {"egy", "ketto", "harom", "negy", "ot", "hat", "het", "nyolc"};
+              
+             /* 
+              std::string iis[] = {
+		"11111111", 
+		"22222222", 
+		"33333333", 
+		"44444444", 
+		"55555555", 
+		"66666666", 
+		"77777777", 
+		"88888888"};
+		*/
+	      char stmt_buffer[40];
+	       std::memset ( stmt_buffer, 0, 40 );
+              //std::snprintf ( stmt_buffer, 40, "cell is %s %s are live",  lattice[r][c]?"true":"false", iis[ii].c_str());
+               //std::snprintf ( stmt_buffer, 16, "%s%s",  lattice[r][c]?"tttttttt":"ffffffff", iis[ii].c_str());
+	      //QString q (stmt_buffer);
+	      //qDebug() <<q;
+	      
+	      /*
+	      for(int t=0; t<40;++t)
+		img_input[t] = ((double)stmt_buffer[t]);
+	      */
+	      
+	       img_input[0] = lattice[r][c]?1.0:-1.0;
+	       img_input[1] = ((double)ii)/(double)10.0;
+	      
+	       ss << img_input[0];
+	       ss << img_input[1];
+	       
           std::string prg = ss.str();
           SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg, img_input );
           //SPOTriplet response = samuQl[r][c] ( lattice[r][c], prg );

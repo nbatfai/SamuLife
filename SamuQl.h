@@ -633,8 +633,8 @@ public:
             //prcps[triplet] = new Perceptron ( 5, 10*80, 400, 400,  32, 1 ); // 302
 #elif LIFEOFGAME
             //prcps[triplet] = new Perceptron ( 3, 9, 32, 1 );
-	    prcps[triplet] = new Perceptron ( 3, 9, 5, 1 );
-	    	   
+//	    prcps[triplet] = new Perceptron ( 4, 2, 64, 9, 1 );
+	    	   prcps[triplet] = new Perceptron ( 3, 2, 6, 1 );
 #else
             prcps[triplet] = new Perceptron ( 3, 256*256, 80, 1 );
             //prcps[triplet] = new Perceptron ( 3, 256*256, 400, 1 );
@@ -735,7 +735,7 @@ public:
 #elif CHARACTER_CONSOLE
         std::memcpy ( prev_image, image, 10*80*sizeof ( double ) );
 #elif LIFEOFGAME
-        std::memcpy ( prev_image, image, 9*sizeof ( double ) );
+        std::memcpy ( prev_image, image, 40*sizeof ( double ) );
 	
 	
 	
@@ -827,7 +827,8 @@ public:
     }
 #endif
     double alpha ( int n ) {
-        return 1.0/ ( ( ( double ) n ) + 1.0 );
+//        return 1.0/ ( ( ( double ) n ) + 1.0 );
+              return 1000000.0/ ( ( ( double ) n ) + 10001.0 );
     }
 
     void clearn ( void ) {
@@ -1090,7 +1091,7 @@ private:
         }
     }
 
-    int N_e = 2;
+    int N_e = 50;
 
     QL ( const QL & );
     QL & operator= ( const QL & );
@@ -1127,17 +1128,22 @@ private:
     std::string prev_state;
 
     double prev_reward { -std::numeric_limits<double>::max() };
+    /*
     double max_reward {13.1};
     double min_reward {-3.1};
+*/
+    
+    double max_reward {100.20};
+    double min_reward {-100.70};
 
-#ifdef PLACE_VALUE
+    #ifdef PLACE_VALUE
     double prev_image [10*3];
 #elif FOUR_TIMES
     double prev_image [2*10*2*80];
 #elif CHARACTER_CONSOLE
     double prev_image [10*80];
 #elif LIFEOFGAME
-    double prev_image [9];
+    double prev_image [40];
 #else
     double prev_image [256*256];
 #endif
