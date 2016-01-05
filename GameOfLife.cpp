@@ -81,7 +81,7 @@ void GameOfLife::run()
 {
   while ( true )
     {
-      QThread::msleep ( 15 );
+      QThread::msleep ( m_delay );
 
       if ( !paused )
         {

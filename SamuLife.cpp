@@ -110,6 +110,14 @@ void SamuLife::keyPressEvent ( QKeyEvent * event )
     {
       gameOfLife->pause();
     }
+  else if ( event->key() == Qt::Key_D) //Qt::Key_division )
+    {
+      gameOfLife->setDelay(gameOfLife->getDelay() / 2.0);
+    }
+  else if ( event->key() == Qt::Key_M) //Qt::Key_multiply )
+    {
+      gameOfLife->setDelay(gameOfLife->getDelay() * 2.0);
+    }
 }
 
 SamuLife::~SamuLife()

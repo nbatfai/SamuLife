@@ -12,10 +12,10 @@ The behaviour and the algorithm of this is the same as the previous one. ()
 * #3, v0.0.2-manySamus-withoutNN-toYouTube: (so many little Samus, without neural network architecture) 
 [https://youtu.be/BnNVM8XNDSA](https://youtu.be/BnNVM8XNDSA) 
 This algorithm has already been reasonable and it has worked very well.
-* #3, v0.0.2-manySamus-withNN-toYouTube: [http](http) 
+* #4, v0.0.3-manySamus-withNN-toYouTube: [http](http) 
 This algorithm is the same as the previous (reasonable) one but it uses neural networks to approximate the Q values 
 and it has not yet worked very well.
-* #4, v0.0.3-buggy+table:
+* #5, v0.0.4-buggy+table:
 
 ## Usage
 
@@ -44,4 +44,15 @@ make
 ```
 [https://youtu.be/BnNVM8XNDSA](https://youtu.be/BnNVM8XNDSA)
 
-### v0.0.2-manySamus-withNN-toYouTube
+### v0.0.3-manySamus-withNN-toYouTube
+
+```
+git clone https://github.com/nbatfai/SamuLife.git
+cd SamuLife/
+git checkout v0.0.2-manySamus-withoutNN-toYouTube
+~/Qt/5.5/gcc_64/bin/qmake SamuLife.pro
+make
+./SamuLife
+```
+[https://youtu.be/b60m__3I-UM](https://youtu.be/b60m__3I-UM)
+

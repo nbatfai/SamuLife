@@ -58,6 +58,8 @@ class GameOfLife : public QThread
     
     long m_time{0};
     
+    int m_delay{15};
+    
 public:
     GameOfLife ( int w = 30, int h = 20 );
     ~GameOfLife();
@@ -68,6 +70,8 @@ public:
     int getH() const;
     long getT() const;
     void pause();
+    int getDelay() const {return m_delay;}
+    void setDelay(int delay) {if(delay > 0) m_delay = delay;}
 
 signals:
     void cellsChanged ( bool **, bool ** );
