@@ -58,4 +58,4 @@ make
 ```
 [https://youtu.be/b60m__3I-UM](https://youtu.be/b60m__3I-UM)
 
-![slexp4](https://cloud.githubusercontent.com/assets/3148120/12130890/88a380e0-b40e-11e5-9459-7d204669baa0.png =1120x)
+![slexp4](https://cloud.githubusercontent.com/assets/3148120/12130890/88a380e0-b40e-11e5-9459-7d204669baa0.png)
