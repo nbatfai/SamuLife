@@ -1,5 +1,5 @@
 # SamuLife
-Samu (Nahshon) has learnt the rules of Conway's Game of Life. This is 
+[Samu](http://arxiv.org/abs/1511.02889) (Nahshon) has learnt the rules of Conway's Game of Life. This is 
 an example of the paper entitled "Samu in his prenatal development".
 
 This project uses the same COP-based Q-learning engine as [Samu(Nahshon)](https://github.com/nbatfai/nahshon) to predict the next sentences of a conversation. 
@@ -53,7 +53,7 @@ make
 ```
 git clone https://github.com/nbatfai/SamuLife.git
 cd SamuLife/
-git checkout v0.0.2-manySamus-withoutNN-toYouTube
+git checkout v0.0.3-manySamus-withNN-toYouTube
 ~/Qt/5.5/gcc_64/bin/qmake SamuLife.pro
 make
 ./SamuLife
