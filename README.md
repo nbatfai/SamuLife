@@ -44,6 +44,8 @@ make
 ```
 [https://youtu.be/BnNVM8XNDSA](https://youtu.be/BnNVM8XNDSA)
 
+![slexp3](https://cloud.githubusercontent.com/assets/3148120/12130724/2d36e82e-b40d-11e5-9412-acb9bff4e932.png)
+
 ### v0.0.3-manySamus-withNN-toYouTube
 
 ```
@@ -56,3 +58,4 @@ make
 ```
 [https://youtu.be/b60m__3I-UM](https://youtu.be/b60m__3I-UM)
 
+![slexp4](https://cloud.githubusercontent.com/assets/3148120/12130890/88a380e0-b40e-11e5-9459-7d204669baa0.png =1120x)
