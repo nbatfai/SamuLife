@@ -2,9 +2,9 @@
 [Samu](http://arxiv.org/abs/1511.02889) (Nahshon) has learnt the rules of Conway's Game of Life. This is 
 an example of the paper entitled "Samu in his prenatal development".
 
-This project uses the same COP-based Q-learning engine as [Samu(Nahshon)](https://github.com/nbatfai/nahshon) to predict the next sentences of a conversation. 
+This project uses the same COP-based Q-learning engine as Samu ([Nahshon](https://github.com/nbatfai/nahshon)) to predict the next sentences of a conversation. 
 
-## Demo
+## Experiments
 * #1: [https://youtu.be/p936TRxfC2I](https://youtu.be/p936TRxfC2I) It works very well, but its algorithm is unreasonable 
 (the interpretation of the rewarding is unreasonable). 
 * #2, v0.0.1-buggyQL: [https://youtu.be/WNrf9OhSbPQ](https://youtu.be/WNrf9OhSbPQ) 
