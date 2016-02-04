@@ -15,13 +15,13 @@ This algorithm has already been reasonable and it has worked very well.
 * #4, v0.0.3-manySamus-withNN-toYouTube: [https://youtu.be/b60m__3I-UM](https://youtu.be/b60m__3I-UM) 
 If this algorithm is the same as the previous (reasonable but now with neural networks to approximate the Q values) then it has 
 not yet worked very well. But with a modified perception, this algorithm has also been reasonable and it has worked very well too.
-* #5, v0.0.3.1-buggy+rewardtable:
-* #6, v0.0.4-predicting-the-present-eliminated: It is important to note that in the previous version the COP-based Q-learning 
+* #5, v0.0.4-predicting-the-present-eliminated: It is important to note that in the previous version the COP-based Q-learning 
 has become trivial because after a short starting period it chooses the Q-action 
 that was passed in as the actual cell state argument. It means that the agent 
 does not predict the future but the present. This version has already been 
 improved. It really predicts the future that can be seen well in the video at 
 https://youtu.be/j6bus5efESU
+* #6, v0.0.5-buggy+rewardtable:
 
 ## Usage
 
@@ -101,7 +101,7 @@ make
 
 ![screenshot from 2016-02-04 11-10-17](https://cloud.githubusercontent.com/assets/3148120/12811945/f38a0d4c-cb2f-11e5-815e-7a1212f62aff.png)
 
-## Previous other experiments
+## Other experiments
 
 Samu (Nahshon)
 http://arxiv.org/abs/1511.02889
