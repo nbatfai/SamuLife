@@ -19,6 +19,17 @@ not yet worked very well. But with a modified perception, this algorithm has als
 
 ## Usage
 
+```
+git clone https://github.com/nbatfai/SamuLife.git
+cd SamuLife/
+~/Qt/5.5/gcc_64/bin/qmake SamuLife.pro
+make
+./SamuLife
+```
+
+## Experiments with this project
+
+
 ### v0.0.1-buggyQL
 ```
 git clone https://github.com/nbatfai/SamuLife.git
@@ -59,3 +70,36 @@ make
 [https://youtu.be/b60m__3I-UM](https://youtu.be/b60m__3I-UM)
 
 ![slexp4](https://cloud.githubusercontent.com/assets/3148120/12130890/88a380e0-b40e-11e5-9459-7d204669baa0.png)
+
+
+### v0.0.4-predicting-the-present-eliminated
+
+It is important to note that in the previous version the COP-based Q-learning 
+has become trivial because after a short starting period it chooses the Q-action 
+that was passed in as the actual cell state argument. It means that the agent 
+does not predict the future but the present. This version has already been 
+improved. It really predicts the future that can be seen well in the video at 
+https://youtu.be/j6bus5efESU
+
+[https://youtu.be/j6bus5efESU](https://youtu.be/j6bus5efESU)
+
+![screenshot from 2016-02-04 11-10-17](https://cloud.githubusercontent.com/assets/3148120/12811945/f38a0d4c-cb2f-11e5-815e-7a1212f62aff.png)
+
+## Previous other experiments
+
+Samu (Nahshon)
+http://arxiv.org/abs/1511.02889
+https://github.com/nbatfai/nahshon
+
+SamuLife
+https://github.com/nbatfai/SamuLife
+https://youtu.be/b60m__3I-UM
+
+SamuMovie
+https://github.com/nbatfai/SamuMovie
+https://youtu.be/XOPORbI1hz4
+
+SamuStroop
+https://github.com/nbatfai/SamuStroop
+https://youtu.be/6elIla_bIrw
+https://youtu.be/VujHHeYuzIk

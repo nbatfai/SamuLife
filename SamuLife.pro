@@ -3,8 +3,8 @@
 ######################################################################
 
 DEFINES += LIFEOFGAME
-DEFINES += SARSA
-#DEFINES += Q_LOOKUP_TABLE
+#DEFINES += SARSA
+DEFINES += Q_LOOKUP_TABLE
 
 QT += widgets core
 CONFIG += c++11

@@ -71,7 +71,7 @@ public:
     long getT() const;
     void pause();
     int getDelay() const {return m_delay;}
-    void setDelay(int delay) {if(delay > 0) m_delay = delay;}
+    void setDelay(int delay) {if(delay > 0) m_delay = delay; else m_delay = 1;}
 
 signals:
     void cellsChanged ( bool **, bool ** );
