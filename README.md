@@ -15,7 +15,13 @@ This algorithm has already been reasonable and it has worked very well.
 * #4, v0.0.3-manySamus-withNN-toYouTube: [https://youtu.be/b60m__3I-UM](https://youtu.be/b60m__3I-UM) 
 If this algorithm is the same as the previous (reasonable but now with neural networks to approximate the Q values) then it has 
 not yet worked very well. But with a modified perception, this algorithm has also been reasonable and it has worked very well too.
-* #5, v0.0.4-buggy+rewardtable:
+* #5, v0.0.3.1-buggy+rewardtable:
+* #6, v0.0.4-predicting-the-present-eliminated: It is important to note that in the previous version the COP-based Q-learning 
+has become trivial because after a short starting period it chooses the Q-action 
+that was passed in as the actual cell state argument. It means that the agent 
+does not predict the future but the present. This version has already been 
+improved. It really predicts the future that can be seen well in the video at 
+https://youtu.be/j6bus5efESU
 
 ## Usage
 
@@ -80,6 +86,16 @@ that was passed in as the actual cell state argument. It means that the agent
 does not predict the future but the present. This version has already been 
 improved. It really predicts the future that can be seen well in the video at 
 https://youtu.be/j6bus5efESU
+
+```
+git clone https://github.com/nbatfai/SamuLife.git
+cd SamuLife/
+git checkout v0.0.4-predicting-the-present-eliminated
+~/Qt/5.5/gcc_64/bin/qmake SamuLife.pro
+make
+./SamuLife
+```
+
 
 [https://youtu.be/j6bus5efESU](https://youtu.be/j6bus5efESU)
 
