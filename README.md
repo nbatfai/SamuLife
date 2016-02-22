@@ -106,7 +106,9 @@ make
 Samu (Nahshon)
 http://arxiv.org/abs/1511.02889, 
 https://github.com/nbatfai/nahshon
+
 ---
+
 SamuMovie
 https://github.com/nbatfai/SamuMovie, 
 https://youtu.be/XOPORbI1hz4
@@ -124,7 +126,9 @@ https://github.com/nbatfai/SamuBrain
 
 SamuCopy
 https://github.com/nbatfai/SamuCopy
+
 ---
+
 SamuTicker
 https://github.com/nbatfai/SamuTicker
 
